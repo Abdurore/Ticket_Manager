@@ -25,4 +25,4 @@ RUN apt-get update && apt-get install -y \
 EXPOSE 80
 
 # Start Apache
-CMD ["apache2-foreground"]
+CMD ["apache2ctl", "-D", "FOREGROUND", "-f", "/etc/apache2/apache2.conf", "-c", "DocumentRoot /var/www/html/api"]"]
