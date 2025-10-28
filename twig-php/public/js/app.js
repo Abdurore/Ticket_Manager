@@ -136,6 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     };
 
+    window.openCreateModal = function(){
+      document.getElementById('ticket-id').value = '';
+      document.getElementById('title').value = '';
+      document.getElementById('description').value = '';
+      document.getElementById('status').value = 'open';
+      document.getElementById('priority').value = 'medium';
+      
+      document.getElementById('ticket-modal').classList.remove('hidden');
+      document.getElementById('modal-overlay').classList.remove('hidden');
+    };
+    
     window.editTicket = (id) => {
       const tickets = JSON.parse(localStorage.getItem('tickets') || '[]');
       const ticket = tickets.find(t => t.id === id);
@@ -220,3 +231,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTickets();
   }
 });
+
