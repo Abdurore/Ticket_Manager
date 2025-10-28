@@ -57,6 +57,10 @@ body {
   border: 0;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Hero Section */
 header.hero {
   position: relative;
@@ -538,4 +542,5 @@ footer {
     transition: none;
     transform: none;
   }
+
 }
