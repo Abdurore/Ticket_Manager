@@ -11,11 +11,7 @@ WORKDIR /var/www/html
 COPY . .
 
 # Install dependencies and Composer
-RUN apt-get update && \
-    apt-get install -y unzip git && \
-    curl -sS https://getcomposer.org/installer | php && \
-    mv composer.phar /usr/local/bin/composer && \
-    composer install --no-interaction --no-progress --optimize-autoloader
+RUN composer install --no-interaction --no-progress --optimize-autoloader --no-scripts
 
 # Expose port 80 for Render
 EXPOSE 80
