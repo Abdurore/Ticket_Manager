@@ -9,6 +9,8 @@ WORKDIR /var/www/html
 
 # Copy all project files
 COPY . .
+COPY templates /var/www/html/templates
+RUN composer install --no-interaction --no-progress --optimize-autoloader --no-scripts
 
 # Install dependencies and Composer safely
 RUN apt-get update && apt-get install -y \
