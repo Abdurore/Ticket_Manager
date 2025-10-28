@@ -1,20 +1,28 @@
-# Use official PHP + Apache image
 FROM php:8.2-apache
 
-# Enable mod_rewrite (needed for routing)
+# Enable rewrite module for Apache
 RUN a2enmod rewrite
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /var/www/html
 
-# Copy project files
+# Copy all project files
 COPY . .
 
-# Install dependencies and Composer
-RUN composer install --no-interaction --no-progress --optimize-autoloader --no-scripts
+# Install system dependencies & PHP extensions needed by Twig/Composer
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    libzip-dev \
+    libicu-dev \
+    libxml2-dev \
+    && docker-php-ext-install intl zip \
+    && curl -sS https://getcomposer.org/installer | php \
+    && mv composer.phar /usr/local/bin/composer \
+    && composer install --no-interaction --no-progress --optimize-autoloader --no-scripts
 
 # Expose port 80 for Render
 EXPOSE 80
 
-# Start Apache when the container runs
+# Start Apache
 CMD ["apache2-foreground"]
