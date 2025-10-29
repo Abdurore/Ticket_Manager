@@ -1,6 +1,6 @@
 import {Link,useNavigate} from 'react-router-dom'
 import { useEffect,useState } from 'react'
-import {toast} from 'react-toastify'
+import {toast} from 'react-hot-toast'
 
 function Dashboard(){
     const [stats,setStats] = useState({total:0, open:0, resolved:0})
@@ -64,4 +64,5 @@ function Dashboard(){
     );
     
 }
+
 export default Dashboard ;
