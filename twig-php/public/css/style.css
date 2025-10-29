@@ -411,6 +411,29 @@ select:focus {
 .Toastify__toast {
   font-family: 'Courier New', Courier, monospace;
 }
+/* Toast */
+.toast {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  min-width: 200px;
+  padding: .75rem 1rem;
+  border-radius: .5rem;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.toast.success { background: #22c55e; }
+.toast.error   { background: #ef4444; }
+.toast.info    { background: #3b82f6; }
 
 .form-register{
   min-height: 100vh;
@@ -544,3 +567,4 @@ footer {
   }
 
 }
+
