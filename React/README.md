@@ -1,16 +1,36 @@
-# React + Vite
+# Ticket Management App - React Version
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Frameworks and Libraries Used
+- React 18 (with Vite for build tool)
+- React Router v6 for routing
+- React Toastify for notifications
+- UUID for generating ticket IDs (uuid library)
+- CSS for styling (no additional UI library to keep pure)
 
-Currently, two official plugins are available:
+## Setup and Execution Steps
+1. Create a new React app with Vite: `npm create vite@latest ticket-app-react -- --template react`
+2. cd ticket-app-react
+3. npm install react-router-dom react-toastify uuid
+4. Replace src/ with the provided code files.
+5. npm run dev to start the app at http://localhost:5173
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instructions for Switching Versions
+This is the React version. For Vue or Twig, see their respective folders/implementations.
 
-## React Compiler
+## UI Components and State Structure
+- Components: Landing, Login, Signup, Dashboard, Tickets (with modal for create/edit)
+- State: Local state for forms, useEffect for localStorage sync.
+- Global: No Redux, useContext not used; direct localStorage access.
+- Protected routes using a wrapper component.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Accessibility and Known Issues
+- Semantic HTML used (main, section, article, nav).
+- Alt text on images (placeholders).
+- Focus states with outline.
+- Contrast checked for colors.
+- Known issue: No real backend, localStorage clears on clear cache.
+- Test user: Signup with any email/pass, then login with same.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Example test user credentials:
+- Email: admin@example.com
+- Password: pass123 (after signup)
