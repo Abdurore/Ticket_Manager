@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
+import { toast } from 'react-hot-toast'
 
 function Login() {
   const [email, setEmail] = useState('')
@@ -34,5 +34,6 @@ function Login() {
     </div>
   )
 }
+
 
 export default Login
