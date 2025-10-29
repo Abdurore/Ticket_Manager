@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { toast } from 'react-toastify'
+import { toast } from 'react-hot-toast'
 import { v4 as uuidv4 } from 'uuid'
 
 function Tickets() {
@@ -110,5 +110,6 @@ function Tickets() {
     </div>
   )
 }
+
 
 export default Tickets
